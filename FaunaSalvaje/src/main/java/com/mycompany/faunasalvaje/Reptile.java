@@ -5,12 +5,12 @@ package com.mycompany.faunasalvaje;
  *
  * @author Alumno
  */
-public class Reptiles {
+public class Reptile {
     String nombre;
     double tamaño;
     double peso;
 
-    public Reptiles(String nombre, double tamaño, double peso) {
+    public Reptile(String nombre, double tamaño, double peso) {
         this.nombre = nombre;
         this.tamaño = tamaño;
         this.peso = peso;

@@ -1,5 +1,3 @@
-
-
 package com.mycompany.faunasalvaje;
 
 import java.util.ArrayList;
@@ -11,6 +9,7 @@ public class FaunaSalvaje {
     static ArrayList<String> nombre = new ArrayList<>();
     static ArrayList<Double> tamaño = new ArrayList<>();
     static ArrayList<Double> peso = new ArrayList<>();
+    
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(null, "Bienvenido a nuestra clínica de rehabilitación \"FAUNA SALVAJE\" ");
 
@@ -59,15 +58,14 @@ public class FaunaSalvaje {
     }
 
     private static void alta() {
-        Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce el nombre del animal:");
         String nombres = entrada.nextLine();
 
-        System.out.println("Introduce el precio del producto por kilo:");
+        System.out.println("Introduce el tamaño del animal:");
         double tamaños = entrada.nextDouble();
 
-        System.out.println("Introduce la cantidad en kilos en stock:");
-        double pesos = entrada.nextInt();
+        System.out.println("Introduce el peso del animal:");
+        double pesos = entrada.nextDouble();
         entrada.nextLine();
         //Guarda los datos de los animales en una lista
         nombre.add(nombres);
@@ -76,7 +74,7 @@ public class FaunaSalvaje {
     }
 
     private static void tratamiento() {
-        
+   
     }
 
     private static void liberacion() {
@@ -84,11 +82,33 @@ public class FaunaSalvaje {
     }
 
     private static void listado() {
-        
+        System.out.println("¿Qué animal estás buscando?");
+        String animalBuscado = entrada.nextLine();
+
+        for (int i = 0; i < nombre.size(); i++) {
+            if (nombre.get(i).equalsIgnoreCase(animalBuscado)) {
+                System.out.printf("El animal %s tiene un tamaño de %.2f y un peso de %.2f\n",
+                        nombre.get(i), tamaño.get(i), peso.get(i));
+                return;
+            }
+        }
+        System.out.println("Animal no encontrado.");
     }
 
     private static void baja() {
-        
+        System.out.println("¿Qué animal estás buscando?");
+        String animalBuscado = entrada.nextLine();
+
+        for (int i = 0; i < nombre.size(); i++) {
+            if (nombre.get(i).equalsIgnoreCase(animalBuscado)) {
+                nombre.remove(i);
+                tamaño.remove(i);
+                peso.remove(i);
+                System.out.println("Sentimos la pérdida de: " + nombre);
+                return;
+            }
+        }
+        System.out.println("Animal no encontrado");
     }
 
     private static void salir() {

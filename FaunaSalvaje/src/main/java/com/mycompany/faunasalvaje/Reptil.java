@@ -5,10 +5,10 @@ package com.mycompany.faunasalvaje;
  *
  * @author Alumno
  */
-public class Mamifero {
+public class Reptil {
     String lesion;
 
-    public Mamifero(String lesion) {
+    public Reptil(String lesion) {
         this.lesion = lesion;
     }
 
@@ -22,4 +22,5 @@ public class Mamifero {
     
     
 
+    
 }
